@@ -1,0 +1,9 @@
+version: '3.5'
+
+services:
+  streaming:
+    image: nats-streaming:latest
+    command: "--store sql --sql_driver postgres --sql_source 'user=nats password=nats host=xps13 dbname=nats sslmode=disable'"
+    ports:
+      - 4222:4222
+      - 8222:8222
